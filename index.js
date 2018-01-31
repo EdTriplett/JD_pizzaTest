@@ -1,4 +1,7 @@
-import fetch from 'isomorphic-fetch';
+// import fetch from 'isomorphic-fetch';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './src/App.js'
 
 // Note: this is the entry point for your application
 
@@ -6,3 +9,5 @@ import fetch from 'isomorphic-fetch';
 // remember that fetch uses promises.
 
 // step 2: implement the view and required behaviors to pass all the scenarios listed in the readme.
+
+ReactDOM.render(<App />, document.getElementById('app'));
