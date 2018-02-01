@@ -32,9 +32,7 @@ export const reducer = (state = initialState, action) => {
       nextState.filterText = action.payload
       return nextState
     case REVERSE_SORT:
-      console.log("old: " + state.pizzas)
-      nextState.pizzas = state.pizzas.reverse()
-      console.log("new: " + nextState.pizzas)
+      nextState.pizzas = state.pizzas.reverse().slice()
       return nextState
     default: 
       return state
