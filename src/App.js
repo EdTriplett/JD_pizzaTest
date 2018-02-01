@@ -47,9 +47,18 @@ class App extends React.Component {
     })
   }
   
+  loadingDisplay() {
+    return (
+      <div>
+        <h1>Loading</h1>
+        <br />
+        <img src='/spinningPizza.gif' />
+      </div>
+    )
+  }
 
- loadedDisplay() {
-  return (
+  loadedDisplay() {
+    return (
       <div>
         <input type='text' name='filterText' placeholder='Enter text to filter by' value={this.state.filterText} onChange={this.handleChange} />
         <br />
@@ -68,7 +77,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {this.state.isLoading ?  (<p>Loading</p>) : this.loadedDisplay()
+        {this.state.isLoading ? this.loadingDisplay() : this.loadedDisplay()
         }
       </div>
     )

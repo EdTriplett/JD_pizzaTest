@@ -1,3 +1,7 @@
+var FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+ 
+
+
 var webpack = require('webpack'),
     port = 8080,
     config = {
@@ -16,10 +20,11 @@ var webpack = require('webpack'),
             ]
         },
         resolve: {
-            extensions: ['', '.js']
+            extensions: ['.js']
         },
         devtool: 'source-map',
         plugins: [
+            new FriendlyErrorsWebpackPlugin(),
             new webpack.HotModuleReplacementPlugin()
         ],
         devServer: {
@@ -28,7 +33,8 @@ var webpack = require('webpack'),
             historyApiFallback: true,
             hot: true,
             contentBase: '.',
-            host: '0.0.0.0'
+            host: '0.0.0.0',
+            quiet: true
         },
         bail: true
     };
