@@ -15,7 +15,9 @@ class SortButtonContainer extends React.Component {
 
   render() {
     return (
-      <SortButton handleClick={this.handleClick} />
+      <div>
+        <SortButton handleClick={this.handleClick} />
+      </div>
     )
   }
 }

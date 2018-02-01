@@ -5,6 +5,8 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import App from './src/components/App.js'
 import {reducer} from './src/reducers.js'
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css';
 
 let store = createStore(
   reducer, 

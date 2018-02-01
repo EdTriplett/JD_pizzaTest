@@ -15,11 +15,13 @@ class FilterInputContainer extends React.Component {
 
   render() {
     return (
-      <FilterInput 
-        placeholder='Enter text to filter by' 
-        value={this.props.filterText} 
-        handleChange={this.handleChange}
-      />
+      <div>
+        <FilterInput 
+          placeholder='Enter text to filter by' 
+          value={this.props.filterText} 
+          handleChange={this.handleChange}
+        />
+      </div>
     )
   }
 }

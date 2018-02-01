@@ -15,7 +15,9 @@ class PizzaListContainer extends React.Component {
   render() {
     const {pizzas} = this.props
     return (
-      <PizzaList pizzas={this.pizzaFilter(pizzas)}  />
+      <div>
+        <PizzaList pizzas={this.pizzaFilter(pizzas)}  />
+      </div>
     )
   }
 }

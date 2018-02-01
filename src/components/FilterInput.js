@@ -1,8 +1,9 @@
 import React from 'react';
+import {Input} from 'reactstrap'
 
 const FilterInput = ({placeholder, value, handleChange}) => {
   return (
-    <input type='text' name='filterText' placeholder={placeholder} 
+    <Input name='filterText' placeholder={placeholder} 
       value={value} 
       onChange={e => handleChange(e.target.value)} 
     />

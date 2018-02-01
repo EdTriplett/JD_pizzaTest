@@ -1,17 +1,32 @@
 import React from 'react';
+import { ListGroup, ListGroupItem } from 'reactstrap';
+
+let count = 0
 
 const PizzaListItem = name => {
+  if (count%2) {
+    return (
+    <ListGroupItem color="success" key={name}> <div className="text-center text-dark">{name}</div>
+    </ListGroupItem>
+    )
+  }
   return (
-    <li key={name}> {name} </li>
-  )
+    <ListGroupItem color="warning" key={name}> <div className="text-center text-dark">{name}</div>
+    </ListGroupItem>
+    )
+  
 }
 
 const PizzaList = ({pizzas}) => {
   return (
-    <ul>
-      {pizzas.map( pizza => PizzaListItem(pizza))
+    <ListGroup>
+      {pizzas.map( pizza => {
+        count++
+        return PizzaListItem(pizza)
+          }
+        )
       }
-    </ul>
+    </ListGroup>
   )
 }
 

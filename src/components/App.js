@@ -1,9 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
+import { Container, Row, Col } from 'reactstrap'
 import FilterInputContainer from './FilterInputContainer.js'
 import SortButtonContainer from './SortButtonContainer.js'
 import PizzaListContainer from './PizzaListContainer.js'
 import LoadingScreen from './LoadingScreen.js'
+import TopBar from './TopBar.js'
 import {getInitialPizzas} from '../actions.js'
 
 class App extends React.Component {
@@ -16,20 +18,44 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <Container>
         {this.props.isLoading ? 
-          (<LoadingScreen />)
+          (
+            <Row>
+            <Col sm="12" md={{ size: 8, offset: 2 }}>
+            <LoadingScreen />
+            </Col>
+            </Row>
+          )
          : (
           <div>
+          <Row>
+          <Col sm="12" md={{ size: 10, offset: 1 }}>
+            <TopBar />
+            </Col>
+            </Row>
+            <br />
+          <Row>
+            <Col sm="12" md={{ size: 8, offset: 2 }}>
             <FilterInputContainer />
+            </Col>
+            </Row>
             <br />
+            <Row>
+            <Col sm="12" md={{ size: 8, offset: 2 }}>
             <SortButtonContainer />
+            </Col>
+            </Row>
             <br />
+            <Row>
+            <Col sm="12" md={{ size: 8, offset: 2 }}>
             <PizzaListContainer />
+            </Col>
+            </Row>
           </div>
           )
         }
-      </div>
+      </Container>
     )
   }
 }
