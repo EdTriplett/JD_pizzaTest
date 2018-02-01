@@ -26,7 +26,6 @@ export const reducer = (state = initialState, action) => {
     case GET_PIZZAS_FAILURE:
       nextState.isLoading = false
       nextState.error = action.payload
-      console.log('Error fetching pizzas: ', nextState.error)
       return nextState
     case SET_FILTER:
       nextState.filterText = action.payload

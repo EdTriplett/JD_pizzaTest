@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "mocha test"
+    "test": "mocha -r ./test/configureEnzyme.js -w"
   },
   "author": "John Deere",
   "license": "Copyright © 2017 Deere & Company",
@@ -16,6 +16,7 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9",
     "react": "^16.2.0",
+    "react-addons-test-utils": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",
     "reactstrap": "^5.0.0-beta",
@@ -29,11 +30,17 @@
     "babel-preset-react": "6.16.0",
     "code": "4.0.0",
     "css-loader": "^0.28.9",
-    "enzyme": "2.4.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "jsdom": "11.6.2",
+    "jsdom-global": "3.0.2",
     "mocha": "3.1.2",
+    "react-test-renderer": "^16.2.0",
+    "react-test-utils": "0.0.1",
+    "redux-test-utils": "^0.2.2",
     "sinon": "1.17.7",
     "style-loader": "^0.20.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.5"
   }
 }

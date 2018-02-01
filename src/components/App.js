@@ -1,62 +1,58 @@
-import React from 'react';
-import {connect} from 'react-redux'
-import { Container, Row, Col } from 'reactstrap'
-import FilterInputContainer from './FilterInputContainer.js'
-import SortButtonContainer from './SortButtonContainer.js'
-import PizzaListContainer from './PizzaListContainer.js'
-import LoadingScreen from './LoadingScreen.js'
-import TopBar from './TopBar.js'
-import {getInitialPizzas} from '../actions.js'
+import React from "react";
+import { connect } from "react-redux";
+import { Container, Row, Col } from "reactstrap";
+import FilterInputContainer from "./FilterInputContainer.js";
+import SortButtonContainer from "./SortButtonContainer.js";
+import PizzaListContainer from "./PizzaListContainer.js";
+import LoadingScreen from "./LoadingScreen.js";
+import TopBar from "./TopBar.js";
+import { getInitialPizzas } from "../actions.js";
 
 class App extends React.Component {
-
   componentDidMount() {
     if (this.props.pizzas.length < 1) {
-      this.props.getInitialPizzas()
+      this.props.getInitialPizzas();
     }
   }
 
   render() {
     return (
       <Container>
-        {this.props.isLoading ? 
-          (
-            <Row>
+        {this.props.isLoading ? (
+          <Row>
             <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <LoadingScreen />
+              <LoadingScreen />
             </Col>
-            </Row>
-          )
-         : (
+          </Row>
+        ) : (
           <div>
-          <Row>
-          <Col sm="12" md={{ size: 10, offset: 1 }}>
-            <TopBar />
-            </Col>
-            </Row>
-            <br />
-          <Row>
-            <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <FilterInputContainer />
-            </Col>
+            <Row>
+              <Col sm="12" md={{ size: 10, offset: 1 }}>
+                <TopBar />
+              </Col>
             </Row>
             <br />
             <Row>
-            <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <SortButtonContainer />
-            </Col>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <FilterInputContainer />
+              </Col>
             </Row>
             <br />
             <Row>
-            <Col sm="12" md={{ size: 8, offset: 2 }}>
-            <PizzaListContainer />
-            </Col>
+              <Col sm="12" md={{ size: 6, offset: 3 }}>
+                <SortButtonContainer />
+              </Col>
+            </Row>
+            <br />
+            <Row>
+              <Col sm="12" md={{ size: 8, offset: 2 }}>
+                <PizzaListContainer />
+              </Col>
             </Row>
           </div>
-          )
-        }
+        )}
       </Container>
-    )
+    );
   }
 }
 
@@ -64,15 +60,15 @@ const mapStateToProps = state => {
   return {
     isLoading: state.isLoading,
     pizzas: state.pizzas
-  }
-}
+  };
+};
 
 const mapDispatchToProps = dispatch => {
   return {
     getInitialPizzas: () => {
-      dispatch(getInitialPizzas())
+      dispatch(getInitialPizzas());
     }
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App);
